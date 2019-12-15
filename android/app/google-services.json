@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "879622936128",
+    "firebase_url": "https://tonpetchtravel.firebaseio.com",
+    "project_id": "tonpetchtravel",
+    "storage_bucket": "tonpetchtravel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879622936128:android:8edaf0924f9a6b5e71b1a5",
+        "android_client_info": {
+          "package_name": "com.flutterthailand.tonpetchtravel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879622936128-3scb63ifm2fncf8a6sp58psuknjee2os.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2fkZSf2SRf_GAaOcDRKQDhosv69xxduI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879622936128-3scb63ifm2fncf8a6sp58psuknjee2os.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
