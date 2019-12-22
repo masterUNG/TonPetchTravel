@@ -69,7 +69,7 @@ class _LanguageState extends State<Language> {
             radioController(string);
           },
         ),
-        Text('Thai'),
+        Text('ไทย'),
       ],
     );
   }
@@ -84,7 +84,7 @@ class _LanguageState extends State<Language> {
             radioController(string);
           },
         ),
-        Text('China'),
+        Text('中文'),
       ],
     );
   }

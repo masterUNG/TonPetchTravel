@@ -38,14 +38,14 @@ class _TravelListViewState extends State<TravelListView> {
     CollectionReference collectionReference = firestore.collection('Travel');
     await collectionReference
         .document(currentLanguage)
-        .collection('Categoty')
+        .collection('Category')
         .document(currentCategory)
         .collection('MenuItem')
         .snapshots()
         .listen((QuerySnapshot querySnapshot) {
       List<DocumentSnapshot> snapshots = querySnapshot.documents;
       for (var map in snapshots) {
-        print('map: ${map.data}');
+       // print('map: ${map.data}');
         TravalModel travalModel = TravalModel.fromJson(map.data);
         setState(() {
           travalModels.add(travalModel);
@@ -64,12 +64,12 @@ class _TravelListViewState extends State<TravelListView> {
   }
 
   Widget showName(int index){
-    return Text(travalModels[index].name);
+    return Text(travalModels[index].name, style: TextStyle(fontWeight: FontWeight.bold),);
   }
   Widget showDetail(int index){
     String string = travalModels[index].detail;
-    if( string.length >= 20){
-      string = string.substring(0,19);
+    if( string.length >= 40){
+      string = string.substring(0,39).replaceAll('*', '\n');
       string = '$string ...';
     }
     return Text(string);

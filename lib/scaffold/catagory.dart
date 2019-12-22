@@ -12,25 +12,25 @@ class _CategoryState extends State<Category> {
   // Field
   List<String> imageSources = [
     'images/place.png',
-    'images/food.png',
+    'images/play.png',
     'images/culture.png',
     'images/knowlegde.png'
   ];
   List<String> names = [
     'Place',
-    'Food',
+    'Play',
     'Culture',
     'Knowlegde',
   ];
   List<String> namesThai = [
     'สถานที่',
-    'อาหาร',
+    'การละเล่น',
     'วัฒนธรรม',
     'ภูมิปัญญา',
   ];
   List<String> namesChina = [
     '位置',
-    '食物',
+    '玩游戏',
     '文化',
     '智慧',
   ];
