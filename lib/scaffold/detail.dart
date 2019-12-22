@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:tonpetchtravel/utility/my_style.dart';
 
-import '../models/travel_model.dart';
 import '../models/travel_model.dart';
 
 class Detail extends StatefulWidget {
@@ -21,11 +21,45 @@ class _DetailState extends State<Detail> {
   void initState() {
     super.initState();
     myTravalModel = widget.travalModel;
+
+    print('lat ====> ${myTravalModel.lat}');
+
     createArrayList();
   }
 
+  Widget showMap() {
+    double lat = myTravalModel.lat;
+    double lng = myTravalModel.lng;
+
+    LatLng latLng = LatLng(lat, lng);
+    CameraPosition cameraPosition = CameraPosition(
+      target: latLng,
+      zoom: 16.0,
+    );
+
+    return Container(
+      color: Colors.grey,
+      width: 300.0,
+      height: 200.0,
+      child: GoogleMap(
+        mapType: MapType.normal,
+        initialCameraPosition: cameraPosition,
+        onMapCreated: (GoogleMapController googleMapController) {},
+      ),
+    );
+  }
+
+  Widget showMapLatLng() {
+    if (myTravalModel.lat == null) {
+      return SizedBox();
+    } else {
+      return showMap();
+    }
+  }
+
   Widget showTextDetail() {
-    return Container(padding: EdgeInsets.only(left: 16.0, right: 16.0),
+    return Container(
+      padding: EdgeInsets.only(left: 16.0, right: 16.0),
       child: Text(myTravalModel.detail.replaceAll('*', '\n')),
     );
   }
@@ -112,6 +146,7 @@ class _DetailState extends State<Detail> {
           child: ListView(
             children: <Widget>[
               showTextDetail(),
+              showMapLatLng(),
             ],
           ),
         ),
